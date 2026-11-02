@@ -16,7 +16,7 @@ No es solo un juego. Es un intento de responder a las preguntas que la medicina 
 
 ## 🎮 Cómo jugar
 
-Puedes jugar directamente desde tu navegador en **[URL de tu página web]**. 
+Puedes jugar directamente desde tu navegador en https://eladiotech.github.io/el-caso-del-97/
 
 Si prefieres jugar en local:
 1. Clona este repositorio.
