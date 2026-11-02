@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Caso del 97</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:,">
+</head>
+
+<body>
+    <div id="game-container">
+        <!-- Pantalla de título -->
+        <div id="title-screen" class="screen active">
+            <div class="title-bg" style="background-image: url('img/portada.jpg');"></div>
+            
+            <h1>El Caso del 97</h1>
+            <p class="subtitle">Un expediente abierto sobre una noche de mayo.</p>
+            <button id="start-btn">Abrir el expediente</button>
+            <button id="continue-btn" class="hidden">Retomar la investigación</button>
+            <button id="new-game-btn" class="hidden">Empezar de cero</button>
+        </div>
+
+        <!-- Pantalla de juego -->
+        <div id="game-screen" class="screen">
+            <!-- FASE 1: IMAGEN -->
+            <div id="image-phase" class="phase">
+                <img id="scene-image" src="" alt="">
+                <div class="image-hint">Pulsa para continuar</div>
+            </div>
+
+            <!-- FASE 2: TEXTO -->
+            <div id="text-phase" class="phase">
+                <div id="text-container">
+                    <p id="scene-text"></p>
+                </div>
+                <button id="continue-reading-btn" class="continue-btn">Continuar ▸</button>
+            </div>
+
+            <!-- FASE 3: OPCIONES -->
+            <div id="options-phase" class="phase">
+                <div id="options-container"></div>
+            </div>
+
+            <!-- Botones Flotantes -->
+            <button id="history-toggle" class="history-toggle" title="Historial">📜</button>
+            <button id="stats-toggle" class="stats-toggle" title="Estadísticas">👁</button>
+            <button id="archive-toggle" class="stats-toggle" style="top: 60px;" title="Archivo">📁</button>
+
+            <!-- Paneles Ocultos -->
+            <div id="history-panel" class="history-panel hidden">
+                <div class="history-header">
+                    <span>📖 Historial</span>
+                    <button id="close-history-btn" title="Cerrar">✕</button>
+                </div>
+                <div id="history-content"></div>
+            </div>
+
+            <div id="stats-panel" class="stats-panel hidden" style="top: 110px;">
+                <div id="stats-content"></div>
+            </div>
+
+            <div id="archive-panel" class="history-panel hidden">
+                <div class="history-header">
+                    <span>📁 Archivo del Caso</span>
+                    <button id="close-archive-btn" title="Cerrar">✕</button>
+                </div>
+                <div id="archive-content" style="flex: 1; overflow-y: auto; text-align: left; padding: 20px;"></div>
+            </div>
+        </div>
+
+        <!-- Pantalla de final -->
+        <div id="end-screen" class="screen">
+            <h2 id="end-title"></h2>
+            <div id="end-text"></div>
+            <button id="restart-btn">Volver a empezar</button>
+        </div>
+    </div>
+
+    <audio id="bg-audio" loop></audio>
+    <audio id="sfx-audio"></audio>
+
+    <!-- Carga de scripts: Config -> Story -> Engine -> Main -->
+    <script src="js/story.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
